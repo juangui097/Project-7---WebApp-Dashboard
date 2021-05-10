@@ -1,0 +1,1696 @@
+/*__________________________________________________________________
+----------------------------    GLOBAL    --------------------------
+--------------------------------------------------------------------*/
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 17px;
+}
+h3 {
+  font-size: 14px;
+  font-weight: 400;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+/*----- H3 -----*/
+.traffic-header h3,
+.traffic-2 h3,
+.social h3,
+.new-members-container h3,
+.recent-activity-container h3,
+.message h3,
+.settings h3 {
+  color: #565c66;
+  text-align: center;
+}
+.daily-traffic h3,
+.mobile-users h3,
+.social h3,
+.new-members-container h3,
+.recent-activity-container h3,
+.message h3,
+.settings h3 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+/*----- MARGIN AUTOS! -----*/
+.notifi-item,
+.alert-banner,
+#traffic-chart,
+#daily-chart,
+#mobile-chart,
+.social-container,
+.social-wrap,
+.new-member,
+.recent-activity-member,
+.widget-container,
+.notifications,
+.custom-select,
+.save-cancel-container,
+.canvas-container-main,
+.canvas-container-daily,
+.canvas-container-mobile {
+  margin: auto;
+}
+
+/*----- OUTLINES -----*/
+.search:focus,
+#userField:focus,
+#messageField:focus,
+#send:focus,
+#save:focus,
+#cancel:focus {
+  outline: none;
+}
+/*----- CHARTS -----*/
+canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*__________________________________________________________________*/
+/*--------------------------    HEADER    --------------------------*/
+/*------------------------------------------------------------------*/
+header {
+  background-color: #7851a9;
+  height: 40px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  grid-area: header;
+}
+
+/*---------   YourApp title   ---------*/
+.app-name {
+  color: #fff;
+  padding-left: 7px;
+  font-weight: 300;
+}
+.app-name-strong {
+  font-weight: 500;
+}
+
+/*---------   PROFILE WRAPPER   ---------*/
+.profile-wrap {
+  display: flex;
+  position: absolute;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  align-items: center;
+}
+/*---------   BELL ICON   ---------*/
+#Layer_1 {
+  cursor: pointer;
+}
+.bell-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform .2s ease-out;
+}
+.bell-icon:hover {
+  transform: scale(1.1);
+}
+.bell-badge {
+  position: relative;
+  top: -25px;
+  left: 82%;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: lightgreen;
+}
+
+/*---------   Notifications   ---------*/
+#notifications {
+	width: 49vw;
+	position: absolute;
+  z-index: 5;
+	top: 35px;
+	right: 7px;
+  display: none;
+}
+
+.notifi-item {
+  width: 100%;
+  min-height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+  border-bottom: 1px solid #585f6a;
+  background-color: #f6f4f4;
+  opacity: 0.95;
+  color: #464b53;
+}
+.notifi-item:hover {
+  opacity: 1;
+  background-color: #eae7e6;
+  cursor: context-menu;
+}
+
+.notifi-item-text::selection,
+.notifi-item-close::selection {
+  background: none;
+}
+
+.notifi-item-text {
+  font-size: 13px;
+  padding-left: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.notifi-item-close {
+  padding-right: 5px;
+  padding-left: 3px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.delete-notification {
+  display: none;
+}
+
+.st0 {
+  stroke: #fff;
+  stroke-width: 0.5px;
+}
+
+/*---------   PROFILE LINE-PIC-NAME   ---------*/
+.profile-line {
+  border-color: #604087;
+  border-style: solid;
+  border-width: 1px;
+  border-left: none;
+  height: 27px;
+  margin: 0 10px;
+}
+
+.profile-pic {
+  height: 25px;
+  width:  28px;
+  border-radius: 50%;
+}
+.profile-name {
+  color: #fff;
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+/*__________________________________________________________________*/
+/*------------------------    NAVIGATION    ------------------------*/
+/*------------------------------------------------------------------*/
+nav {
+  background-color: #49275B;
+  height: 30px;
+  grid-area: nav;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon {
+  margin-top: 4px;
+  width: 21px;
+  height: 21px;
+  opacity: 0.5;
+  transition: transform .2s ease-out;
+}
+
+.active-icon {
+  opacity: 1;
+  transform: scale(1.04);
+}
+.icon:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/*________________________________________________________
+------------------- DASHBOARD-MAIN -----------------------
+--------------------------------------------------------*/
+main {
+  grid-area: main;
+}
+/***  ROW 1  ***/
+/*---------- MAIN HEADER ----------*/
+.main-header-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.headline {
+  margin: 10px;
+  font-size: 15px;
+  font-weight: normal;
+  color: #565c66;
+}
+
+.main-header-search {
+  flex: 1;
+  background-color: #f5f5f5;
+  height: 35px;
+  border-left: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  text-align: right;
+}
+
+/*------   SEARCH   ------*/
+.search-container {
+  margin-top: 4px;
+  margin-right: 8px;
+  position: relative;
+  float: right;
+  width: 75%;
+  max-width: 270px;
+  height: 26px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.search-container-box {
+  width: 100%;
+  height: 100%;
+}
+
+.search {
+  background-color: #fff;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 13.5px;
+  color: #565c66;
+}
+.search::selection {
+  background: lightblue;
+}
+
+.fa-search {
+  font-size: 14px;
+  color: #7851a9;
+}
+
+/*------   ALERT BANNER   ------*/
+.alert-banner {
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #817DC7;
+  color: #fff;
+}
+
+.alert-banner-text {
+  font-size: 12.4px;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.alert-banner-close {
+  padding-right: 6px;
+  padding-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+/*****  CHARTS   *****/
+.canvas-container-main,
+.canvas-container-daily,
+.canvas-container-mobile {
+  width: 95%;
+}
+
+/***  ROW 2  ***/
+/*----------  MAIN TRAFFIC CHART  ----------*/
+.traffic {
+  padding-bottom: 20px;
+}
+.traffic-header {
+  margin-top: 20px;
+}
+.traffic-nav {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.traffic-nav-link {
+  color: #565c66;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 34px;
+  text-align: center;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+.active {
+  background-color: #5dc97a;
+  color: #fff;
+}
+
+.traffic-nav-link:hover:not(.active) {
+  background-color: #ededed;
+}
+
+
+/***  ROW 3  ***/
+/*----------  DAILY TRAFFIC  ----------*/
+.daily-traffic {
+  padding-bottom: 10px;
+  border-top: 1px solid rgba(217, 217, 217, 0.85);
+}
+
+/*----------  MOBILE USERS  ----------*/
+.mobile-users {
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(217, 217, 217, 0.85);
+}
+
+/***  ROW 4  ***/
+/*----------  SOCIAL  ----------*/
+.social {
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(217, 217, 217, 0.85);
+}
+
+.social-container {
+  height: 70px;
+  width: 70%;
+  max-width: 250px;
+  margin-top: 10px;
+  border: 1px solid #DADADA;
+  background-color: #FAFAFA;
+  border-radius: 4px;
+}
+.social-container:nth-of-type(2),
+.social-container:nth-of-type(3) {
+  margin-top: 20px;
+}
+
+.social-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 75.2%;
+  max-width: 170px;
+  height: 52px;
+  margin-left: 10%;
+  margin-top: 8px;
+}
+
+.social-image {
+  background-color: #817DC7;
+  height: 100%;
+  width: 60px;
+  border-radius: 50%;
+}
+
+#twitter {
+  width: 45px;
+  height: 45px;
+  padding-top: 13px;
+  padding-left: 16px;
+}
+#facebook {
+  width: 46px;
+  height: 46px;
+  padding-top: 5px;
+  padding-left: 13px;
+}
+#google-plus {
+  width: 45.5px;
+  height: 45.5px;
+  padding-top: 8px;
+  padding-left: 19px;
+}
+
+.social-text {
+  height: 100%;
+  width: 85px;
+  padding-top: 3px;
+}
+.social-text-title {
+  color: #817DC7;
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.social-text-stat {
+  opacity: 0.6;
+  font-size: 26px;
+}
+
+
+
+
+/***  ROW 5  ***/
+/*----------  MEMBERS  ----------*/
+.new-members-container,
+.recent-activity-container {
+  border-top: 1px solid rgba(217, 217, 217, 0.85);
+  padding-bottom: 15px;
+}
+
+.new-member,
+.recent-activity-member {
+  border-bottom: 1px solid rgba(217, 217, 217, 0.5);
+  display: flex;
+  align-items: center;
+  height: 67px;
+  width: 90%;
+  max-width: 410px;
+  margin-top: 4px;
+}
+.recent-activity-member {
+  justify-content: space-between;
+ }
+ .recent-activity-member-left {
+   display: flex;
+   align-items: center;
+   height: 100%;
+   width: 94%;
+   padding-bottom: 10px;
+ }
+
+.new-member:nth-last-of-type(1),
+.recent-activity-member:nth-last-of-type(1) {
+  border: none;
+}
+
+
+.new-member-pic,
+.recent-activity-member-pic {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+.new-member-text,
+.recent-activity-text {
+  height: 27px;
+  margin-left: 1.5%;
+}
+.new-member-text p,
+.recent-activity-text p {
+  color: #565c66;
+  font-size: 13px;
+}
+
+.new-member-text a {
+  color: #817DC7;
+  font-size: 12px;
+  position: relative;
+  top: -4px;
+}
+
+.new-member-date {
+  color: #565c66;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: 2px;
+}
+
+
+/* _______________________________ */
+.recent-activity-text strong {
+  font-weight: 500;
+}
+
+.recent-activity-time {
+  font-weight: 500;
+  color: #565c66;
+  font-size: 12px;
+  position: relative;
+  top: -2px;
+}
+
+/* ARROW */
+.recent-activity-arrow {
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 5px;
+  border: solid #817DC7;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+/***  ROW 6  ***/
+.message-settings {
+  /* border: 1px solid blue; */
+  padding-bottom: 15px;
+}
+/*----------  MESSAGE & SETTINGS CONTAINERS  ----------*/
+.message,
+.settings {
+  border-top: 1px solid rgba(217, 217, 217, 0.5);
+  margin-bottom: 15px;
+}
+/*----  FORM & NOTIFICACTIONS  ----*/
+.widget-container,
+.notifications {
+  width: 85%;
+  margin-top: 10px;
+}
+
+/*  MAX WIDTH  limits*/
+.widget-container, .notifications,
+.custom-select, .save-cancel-container {
+  max-width: 400px;
+}
+
+/* Search for User */
+#userField {
+  width: 100%;
+  height: 32px;
+  color: rgba(86, 92, 103, 0.8);
+  border: 1px solid #DADADA;
+  background-color: #FAFAFA;
+  border-radius: 4px;
+  font-size: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+#userField::placeholder,
+#messageField::placeholder {
+  color: #565c66;
+  opacity: 0.6;
+}
+
+.autocomplete-items {
+  position: absolute;
+  z-index: 99;
+  width: 85%;
+  max-width: 400px;
+  border: 1px solid #DADADA;
+  border-bottom: none;
+  border-top: none;
+  font-size: 13px;
+  color: rgba(86, 92, 103, 0.8);
+  border-radius: 3%;
+}
+.autocomplete-items div {
+  padding-left: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  cursor: pointer;
+  background-color: #FFF;
+  border-bottom: 1px solid #DADADA;
+  border-radius: 3%;
+}
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/* Message for User */
+#messageField {
+  margin-top: 10px;
+  width: 100%;
+  height: 100px;
+  font-size: 13px;
+  color: rgba(86, 92, 103, 0.8);
+  border: 1px solid #DADADA;
+  border-radius: 4px;
+  background-color: #FAFAFA;
+  padding: 10px;
+  resize: none;
+}
+#messageField::-webkit-scrollbar {
+  display: none;
+}
+
+/****** SEND BUTTON ******/
+#send {
+  background-color: #817DC7;
+  margin-top: 10px;
+  width: 100%;
+  height: 37px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+#send:hover {
+  opacity: 0.95;
+}
+/*----------  SETTINGS  ----------*/
+.notifications-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.notifications-container p {
+  color: #565c66;
+  font-size: 13.5px;
+}
+/* --------------   SWITCHES   -------------- */
+/* THIS IS THE BOX --- border radius doesn't take 100% here*/
+.toggle-label {
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 27px;
+  border: 2px solid rgba(173, 173, 189, 0.4);
+  border-radius: 28px;
+  cursor: pointer;
+}
+/*DO NOT MODIFY (hidden checkbox)*/
+.toggle-label input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/*BACKGROUND WHEN OFF*/
+.toggle-label input[type=checkbox]+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(177, 177, 177, 1);
+  transition: margin 160ms linear;
+  border-radius: 27px;
+}
+/*BACKGROUND WHEN ON*/
+.toggle-label input[type=checkbox]:checked+.back {
+  background: #817DC7;
+}
+/* CIRCLE WHEN ON*/
+.toggle-label input[type=checkbox]:checked+.back .toggle {
+  margin-left: 41px;
+}
+/*CIRCLE WHEN HITS LEFT*/
+.toggle-label input[type=checkbox]+.back .toggle {
+  display: block;
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 2px;
+  left: 3px;
+  border: 2px solid rgba(173, 173, 189, 0.4);
+  border-radius: 50%;
+  content: ' ';
+  background: #fff;
+  transition: margin 160ms linear;
+}
+/* DEFAULT */
+.toggle-label .label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+  display: block;
+  position: absolute;
+  margin-top: 4px;
+}
+.toggle-label .label::selection {
+  background: none;
+}
+/* ON IN DEFAULT */
+.toggle-label .label.on {
+  left: 7px;
+}
+
+/* OFF IN DEFAULT */
+.toggle-label .label.off {
+  right: 7px;
+}
+.toggle-label input[type=checkbox]:checked+.back .label.on,
+.toggle-label input[type=checkbox]+.back .label.off {
+  opacity: 1;
+}.toggle-label input[type=checkbox]:checked+.back .label.off {
+  opacity: 0;
+}
+
+
+
+/* --------------   TIMEZONE   -------------- */
+.custom-select {
+  position: relative;
+  height: 31px;
+  width: 85%;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border: 1px solid #DADADA;
+  border-radius: 4px;
+  font-size: 13.5px;
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  background-color: #FAFAFA;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 7px;
+  right: 10px;
+  border: solid #817DC7;
+  border-width: 0 0 1.6px 1.6px;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  top: 14px;
+  border: solid #817DC7;
+  border-width: 1.6px 1.6px 0 0;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #565c66;
+  opacity: 0.6;
+  padding: 7px 10px;
+  border-radius: 3px;
+  border-bottom: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #FAFAFA;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* --------------   SAVE-CANCEL   -------------- */
+.save-cancel-container {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+#save,
+#cancel {
+  width: 47%;
+  height: 37px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+#save {
+  background-color: #817DC7;
+}
+#cancel {
+  background-color: rgba(177, 177, 177, 1);
+}
+#save:hover,
+#cancel:hover {
+  opacity: 0.95;
+}
+
+
+
+
+
+/*__________________________________________________________________*/
+/*-----------------------    MEDIA QUERIES   -----------------------*/
+/*------------------------------------------------------------------*/
+@media all and (min-width: 342px) {
+  .profile-wrap {
+    right: 10px;
+    justify-content: flex-end;
+  }
+  #notifications {
+    right: -5px;
+    max-width: 195px;
+  }
+}
+@media all and (min-width: 380px) {
+  #notifications {
+    width: 45vw;
+  }
+}
+@media all and (min-width: 404px) {
+  h1 {
+    font-size: 19px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+  .daily-traffic h3,
+  .mobile-users h3,
+  .social h3,
+  .new-members-container h3,
+  .recent-activity-container h3,
+  .message h3,
+  .settings h3 {
+    margin-top: 18px;
+    margin-bottom: 13px;
+  }
+  .profile-pic {
+    height: 28px;
+    width:  28px;
+  }
+
+  /*---------- MAIN HEADER ----------*/
+  .headline {
+    font-size: 17px;
+    margin: 9px;
+  }.main-header-search {
+    height: 38px;
+  }.search-container {
+    height: 29px;
+  }
+/*---------- MAIN Traffic ----------*/
+  .traffic-nav-link {
+    font-size: 13.5px;
+    padding: 4px 8px;
+  }
+  /* MEMBERS */
+  .new-member-pic,
+  .recent-activity-member-pic {
+    height: 37px;
+    width: 37px;
+  }
+}
+
+@media all and (min-width: 464px) {
+  .daily-traffic h3,
+  .mobile-users h3,
+  .social h3,
+  .new-members-container h3,
+  .recent-activity-container h3,
+  .message h3,
+  .settings h3 {
+    margin-top: 20px;
+    margin-bottom: 18px;
+  }
+  /*------   ALERT BANNER   ------*/
+  .alert-banner {
+    width: 96%;
+    margin-top: 13px;
+  }.alert-banner-text {
+    font-size: 13px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }.alert-banner-close {
+    font-size: 18px;
+    padding-top: 4px;
+    padding-right: 8px;
+  }
+   .recent-activity-member-left {
+     padding-bottom: 0;
+   }
+   /* ARROW */
+   .recent-activity-arrow {
+     border-width: 0 1.8px 1.8px 0;
+     padding: 5px;
+   }
+
+}
+
+@media all and (min-width: 600px) {
+  .daily-traffic h3,
+  .mobile-users h3,
+  .social h3,
+  .new-members-container h3,
+  .recent-activity-container h3,
+  .message h3,
+  .settings h3 {
+    width: 92%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 18px;
+    text-align: left;
+  }
+  header {
+    justify-content: space-between;
+    height: 45px;
+  }
+  .app-name {
+    padding-left: 17px;
+  }
+  /*---------   PROFILE WRAPPER   ---------*/
+  .profile-wrap {
+    right: 10px;
+  }
+  .bell-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .bell-badge {
+    top: -28px;
+  }
+  #notifications {
+    max-width: 250px;
+    top: 42px;
+    right: 40%;
+    border-radius: 5px;
+  }
+  .notifi-item {
+    min-height: 40px;
+  }
+  .notifi-item-text {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .notifi-item-close {
+    padding-right: 8px;
+    font-size: 19px;
+  }
+  /*---------   PROFILE LINE-PIC-NAME   ---------*/
+  .profile-line {
+    height: 32px;
+    margin: 0 15px;
+  }
+  .profile-pic {
+    height: 30px;
+    width: 30px;
+  }
+  .profile-name {
+    margin-left: 10px;
+  }
+  /*------------------------    NAVIGATION    ------------------------*/
+  nav {
+    height: 32px;
+  }
+  .icon {
+    margin-top: 5px;
+    width: 22px;
+    height: 22px;
+  }
+  /*---------- MAIN HEADER ----------*/
+  .headline {
+    margin: 15px 13px;
+  }
+  .main-header-search {
+    height: 42px;
+  }
+  /*------   SEARCH   ------*/
+  .search-container {
+    height: 32px;
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+  .search {
+    font-size: 14px;
+  }
+  .fa-search {
+    font-size: 16px;
+    margin-right: 4px;
+  }
+  /*------   ALERT BANNER   ------*/
+  .alert-banner {
+    width: 94%;
+  }
+
+  .traffic-header {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    width: 94%;
+  }
+  .traffic-header h3 {
+    text-align: left;
+  }
+  .traffic-nav {
+    width: 300px;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  /*----------  SOCIAL  ----------*/
+  .social-flex {
+    width: 92%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .social-container {
+    height: 76px;
+    width: 32%;
+    max-width: none;
+    margin: 0;
+  }
+  .social-container:nth-of-type(2),
+  .social-container:nth-of-type(3) {
+    margin: 0;
+  }
+  .social-wrap {
+    width: 90%;
+    height: 85%;
+    margin: 0;
+    margin-top: 6px;
+    margin-left: 4%;
+  }
+  .social-image {
+    width: 65px;
+  }
+  #twitter {
+    width: 50px;
+    height: 50px;
+    padding-top: 19px;
+    padding-left: 17px;
+  }
+  #facebook {
+    width: 51px;
+    height: 51px;
+    padding-top: 8px;
+    padding-left: 13px;
+  }
+  #google-plus {
+    width: 48px;
+    height: 48px;
+    padding-top: 16px;
+    padding-left: 18px;
+  }
+  .social-text {
+    width: 52%;
+    padding-top: 6px;
+  }
+  .social-text-stat {
+    padding-top: 2px;
+  }
+  .new-member,
+  .recent-activity-member {
+    width: 92%;
+    max-width: none;
+  }
+   .recent-activity-member-left {
+   }
+   .new-member-text,
+   .recent-activity-text {
+     height: 29px;
+   }
+   .new-member-text p,
+   .recent-activity-text p {
+     font-size: 14px;
+   }
+   .new-member-text a {
+     top: -3px;
+     font-size: 13px;
+   }
+
+   .new-member-date {
+     font-size: 13px;
+     font-weight: 400;
+   }
+   .recent-activity-time {
+     font-size: 13px;
+   }
+
+   /***  ROW 6  ***/
+   .message-settings {
+     padding-bottom: 35px;
+   }
+   /*----  FORM & NOTIFICACTIONS  ----*/
+   .widget-container {
+     width: 92%;
+     max-width: none;
+   }
+   .notifications {
+     width: 92%;
+     max-width: none;
+   }
+
+   /* Search for User */
+   #userField {
+     height: 37px;
+     font-size: 14px;
+     padding-left: 14px;
+     padding-right: 14px;
+   }
+
+   .autocomplete-items {
+     width: 92%;
+     max-width: none;
+     font-size: 14px;
+   }
+   .autocomplete-items div {
+     padding: 7px 14px;
+   }
+
+   /* Message for User */
+   #messageField {
+     margin-top: 14px;
+     height: 150px;
+     font-size: 14px;
+     padding: 14px;
+   }
+
+   /****** SEND BUTTON ******/
+   #send {
+     margin-top: 14px;
+     height: 45px;
+   }
+
+   /*----------  SETTINGS  ----------*/
+   .notifications-container {
+     width: 270px;
+   }
+   .notifications-container p {
+     font-size: 14px;
+   }
+   /* --------------   SWITCHES   -------------- */
+   /* THIS IS THE BOX --- border readius doesn't take 100% here*/
+   .toggle-label {
+     width: 74px;
+     height: 29px;
+   }
+   /* CIRCLE WHEN ON*/
+   .toggle-label input[type=checkbox]:checked+.back .toggle {
+     margin-left: 44px;
+   }
+   /*CIRCLE WHEN HITS LEFT*/
+   .toggle-label input[type=checkbox]+.back .toggle {
+     top: 3px;
+   }
+   /* Letters default*/
+   .toggle-label .label {
+     margin-top: 5px;
+   }
+   .toggle-label .label.off {
+     right: 8px;
+   }
+   /* --------------   TIMEZONE   -------------- */
+   .custom-select {
+     height: 36px;
+     width: 92%;
+     max-width: none;
+     margin-bottom: 20px;
+     font-size: 14px;
+   }
+   /*style the arrow inside the select element:*/
+   .select-selected:after {
+     top: 8px;
+     right: 13px;
+     padding: 4.5px;
+   }
+   .select-items div,.select-selected {
+     padding: 10px 14px;
+     height: 35px;
+   }
+   /* --------------   SAVE-CANCEL   -------------- */
+   .save-cancel-container {
+     width: 92%;
+     max-width: none;
+   }#save,
+    #cancel {
+     width: 48%;
+     max-width: 300px;
+     height: 45px;
+   }
+}
+
+@media all and (min-width: 700px) {
+  nav {
+    height: 34px;
+  }
+  .icon {
+    margin-top: 6px;
+  }
+  .main-header-search {
+    height: 46px;
+  }
+  /*------   SEARCH   ------*/
+  .search-container {
+    margin-top: 7px;
+    margin-right: 3%;
+    width: 55%;
+    max-width: 350px;
+  }.search {
+    padding-left: 7px;
+  }
+  /*------   ALERT BANNER   ------*/
+  .alert-banner-text {
+    padding-left: 13px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }.alert-banner-close {
+    padding-right: 10px;
+    padding-top: 7px;
+  }
+  /*----------  SOCIAL  ----------*/
+  .social-container {
+    height: 84px;
+    width: 31%;
+  }.social-wrap {
+    width: 85%;
+    height: 82%;
+    margin-top: 7px;
+    margin-left: 10px;
+  }
+
+  #twitter {
+    width: 53px;
+    height: 53px;
+    padding-top: 22px;
+    padding-left: 14px;
+  } #facebook {
+    width: 52px;
+    height: 52px;
+    padding-top: 13px;
+    padding-left: 12px;
+  } #google-plus {
+    width: 51px;
+    height: 51px;
+    padding-top: 18px;
+    padding-left: 18px;
+  }
+  .social-text-title {
+    font-size: 16px;
+  }.social-text-stat {
+    font-weight: 300;
+    font-size: 30px;
+    padding-top: 0;
+  }
+  /*- MEMBERS -*/
+  .members {
+    display: flex;
+    border-top: 1px solid rgba(217, 217, 217, 0.85);
+  }.new-members-container {
+    border: none;
+    border-right: 1px solid rgba(217, 217, 217, 0.85);
+    width: 50%;
+  }.recent-activity-container {
+    border: none;
+    width: 50%;
+  }.new-member,
+  .recent-activity-member {
+    height: 80px;
+  }
+   .message-settings {
+     display: flex;
+     border-top: 1px solid rgba(217, 217, 217, 0.5);
+   }
+   /*- MESSAGE & SETTINGS CONTAINERS -*/
+   .message,
+   .settings {
+     border: none;
+     width: 50%;
+     margin-bottom: 0;
+   }
+   .message {
+     border-right: 1px solid rgba(217, 217, 217, 0.5);
+   }
+   .autocomplete-items {
+     width: 45.9%;
+   }
+   /* Message for User */
+   #messageField {
+     height: 130px;
+   }
+   /*- SETTINGS -*/
+   .settings {
+     display: flex;
+     flex-direction: column;
+   }
+   .notifications {
+     margin-top: 0;
+   }
+   .notifications-container {
+     margin: 0;
+     margin-top: 5px;
+   }
+   .notifications-container:nth-of-type(1) {
+     margin-bottom: 30px;
+   }
+   /* --------   TIMEZONE   -------- */
+   .custom-select {
+     margin-bottom: 6px;
+   }
+   /* ------ SAVE-CANCEL ----- */
+   .save-cancel-container {
+     margin-top: auto;
+     margin-bottom: 0;
+   }
+}
+
+@media all and (min-width: 768px) {
+  #grid-container {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+            "header header"
+            "nav main";
+  }
+  /*****  CHARTS   *****/
+  .canvas-container-daily,
+  .canvas-container-mobile {
+    width: 90%;
+    height: 300px;
+  }
+
+  /*----    NAVIGATION    ----*/
+  nav {
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: baseline;
+  }.icon {
+    width: 24px;
+    height: 24px;
+    margin-top: 27px;
+    margin-left: 15px;
+  }
+   .message-settings {
+     padding-bottom: 10px;
+   }.message,
+   .settings {
+     padding-bottom: 35px;
+   }
+}
+
+@media all and (min-width: 848px) {
+  #grid-container {
+    grid-template-columns: 60px 1fr;
+  }
+  .daily-traffic h3,
+  .mobile-users h3,
+  .social h3,
+  .new-members-container h3,
+  .recent-activity-container h3,
+  .message h3,
+  .settings h3 {
+    width: 100%;
+    padding-left: 25px;
+  }
+  .new-members-container h3,
+  .recent-activity-container h3 {
+    margin-bottom: 0;
+  }
+  .canvas-container-daily,
+  .canvas-container-mobile {
+    height: 230px;
+  }
+  #notifications {
+    max-width: 300px;
+    right: 37%;
+  }
+  .notifi-item {
+    min-height: 45px;
+  }.notifi-item-text {
+    font-size: 15px;
+  }.notifi-item-close {
+    font-size: 22px;
+    padding-right: 10px;
+    margin-top: -2px;
+  }
+  /*- NAVIGATION -*/
+  .icon {
+    margin-left: 17px;
+  }
+  /*-MAIN HEADER-*/
+  .headline {
+    margin: 0;
+    padding: 15px;
+  }
+  .main-header-search {
+    height: 50px;
+  }
+  /*------   SEARCH   ------*/
+  .search-container {
+    margin-top: 9px;
+  }
+  /*------   ALERT BANNER   ------*/
+  .alert-banner {
+    margin-top: 20px;
+    margin-left: 23px;
+  }
+  .alert-banner-text {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 15px;
+  }
+  .alert-banner-close {
+    padding-right: 13px;
+    padding-top: 6px;
+    font-size: 20px;
+  }
+  .traffic-header {
+    margin-top: 25px;
+  }
+  /***  ROW 3  ***/
+  .traffic-2 {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(217, 217, 217, 0.85);
+  }
+  /*-DAILY TRAFFIC-*/
+  .daily-traffic {
+    padding: 0;
+    border: none;
+    border-right: 1px solid rgba(217, 217, 217, 0.85);
+    width: 50%;
+  }
+  /*-MOBILE USERS-*/
+  .mobile-users {
+    padding: 0;
+    border: none;
+    width: 50%;
+  }
+  /*-SOCIAL-*/
+  .social {
+    padding-bottom: 40px;
+  }
+  .social-flex {
+    width: 94%;
+    margin-left: 25px;
+  }
+  .social-container {
+    height: 92px;
+    max-width: 310px;
+  }
+  .social-wrap {
+    height: 72%;
+    max-width: 250px;
+    margin-top: 13px;
+  }
+  .social-image {
+    width: 60px;
+  }
+  #twitter {
+    width: 51px;
+    height: 51px;
+    padding-top: 20px;
+    padding-left: 10px;
+  } #facebook {
+    width: 48px;
+    height: 49px;
+    padding-top: 12px;
+    padding-left: 10px;
+  } #google-plus {
+    width: 48px;
+    height: 48px;
+    padding-top: 18px;
+    padding-left: 13px;
+  }
+  .social-text {
+    padding-top: 4px;
+    width: 59%;
+  }
+  .social-text-title {
+    font-size: 17px;
+  }
+  .social-text-stat {
+    font-size: 35px;
+  }
+  .new-member,
+  .recent-activity-member {
+    width: 90%;
+    margin-left: 25px;
+  }
+   /*----  FORM  ----*/
+   .widget-container {
+    width: 88%;
+    margin-left: 25px;
+   }.autocomplete-items {
+     width: 40.7%;
+   }
+   .notifications {
+     margin-left: 25px;
+   }
+   /* ----- TIMEZONE ----- */
+   .custom-select {
+     width: 88%;
+     margin-left: 25px;
+   }
+   /* ---   SAVE-CANCEL  --- */
+   .save-cancel-container {
+     width: 88%;
+     margin-left: 25px;
+   }
+}
+
+@media all and (min-width: 913px) {
+  header {
+    height: 48px;
+  }
+  .profile-wrap {
+    right: 15px;
+  }
+  #notifications {
+    right: 33%;
+    top: 40px;
+  }
+  .social-wrap {
+    width: 72%;
+    height: 62px;
+    margin-left: 18px;
+  }
+   .autocomplete-items {
+     width: 41%;
+   }
+}
+@media all and (min-width: 991px) {
+  #grid-container {
+    grid-template-columns: 62px 1fr;
+  }
+  .profile-wrap {
+    right: 25px;
+  }
+  #notifications {
+    right: 32%;
+  }
+  .icon {
+    width: 26px;
+    height: 26px;
+    margin-top: 30px;
+  }
+  .alert-banner-text {
+    font-size: 14px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+  .alert-banner-close {
+    padding-top: 8px;
+  }
+  .social-wrap {
+    width: 80%;
+    margin-left: 22px;
+    height: 65px;
+  }
+  .social-image {
+    width: 62px;
+  }
+  #twitter {
+    padding-left: 14px;
+    padding-top: 21px;
+  }#facebook {
+    height: 51px;
+    padding-left: 13px;
+  }#google-plus {
+    width: 49px;
+    height: 49px;
+    padding-left: 14px;
+  }
+  .social-text {
+    width: 63%;
+  }
+  .social-text-stat {
+    font-size: 36px;
+  }
+   .message,
+   .settings {
+     padding-bottom: 40px;
+   }
+   .autocomplete-items {
+     width: 41.1%;
+   }
+   #messageField {
+     margin-top: 17px;
+   }
+   .custom-select {
+     margin-bottom: 0;
+   }
+}
+
+@media all and (min-width: 1024px) {
+  .daily-traffic h3,
+  .mobile-users h3,
+  .social h3,
+  .new-members-container h3,
+  .recent-activity-container h3,
+  .message h3,
+  .settings h3,
+  .new-members-container h3,
+  .recent-activity-container h3 {
+    margin-top: 25px;
+  }
+        /*-MAIN HEADER-*/
+  .headline {
+    padding: 18px 23px 10px 23px;
+  }
+  .search-container {
+    margin-right: 4%;
+  }
+          /*- DAILY TRAFFIC-MOBILE USERS -*/
+  .daily-traffic,
+  .mobile-users {
+    padding-bottom: 20px;
+  }
+            /*SOCIAL*/
+  .social {
+    padding-bottom: 50px
+  }.social-flex {
+    max-width: 1000px;
+  }.social-container {
+    max-width: 275px;
+  }
+  .social-wrap {
+    max-width: 220px;
+  }.social-text {
+    width: 64%;
+  }
+   .autocomplete-items {
+     width: 41.2%;
+   }
+}
+
+@media all and (min-width: 1034px) {
+  .new-member,
+  .recent-activity-member {
+    height: 60px;
+    margin-top: 7px;
+  }
+}
